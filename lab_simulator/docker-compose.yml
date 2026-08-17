@@ -1,0 +1,28 @@
+# ==============================================================================
+# Simulated Failure Environment - Docker Compose Lab
+# Author: Aiswarya Rojer
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # 1. Healthy Web Server Endpoint
+  web-healthy:
+    image: nginx:alpine
+    container_name: netdiag-healthy-web
+    ports:
+      - "8080:80"
+
+  # 2. Closed Port / Refused Connection Simulator
+  web-blocked:
+    image: alpine
+    container_name: netdiag-blocked-target
+    command: nc -lk -p 9999 -e echo "Blocked"
+    # Port 9999 is intentionally unmapped to simulate firewall drop
+
+  # 3. DNS Testbed Node
+  dns-stub:
+    image: coredns/coredns:latest
+    container_name: netdiag-dns-testbed
+    ports:
+      - "5353:53/udp"

@@ -1,0 +1,6 @@
+2026-08-17T18:00:01Z server-node-01 systemd[1]: Starting Network Manager...
+2026-08-17T18:00:15Z server-node-01 kernel: [ 102.4512] Out of memory: Kill process 4102 (mysqld) score 750 or sacrifice child
+2026-08-17T18:00:16Z server-node-01 kernel: [ 102.4515] OOM-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0
+2026-08-17T18:01:05Z server-node-01 nginx[1204]: 2026/08/17 18:01:05 [error] 1204#0: *1 connect() failed (111: Connection refused) while connecting to upstream
+2026-08-17T18:02:22Z server-node-01 systemd-journald[312]: Suppressed 42 messages from /system.slice/cron.service
+2026-08-17T18:03:00Z server-node-01 storage-agent[901]: ERROR: Disk full - No space left on device (/var/log)
